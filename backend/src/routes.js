@@ -3,12 +3,15 @@ const { Router } = require("express");
 const UserController = require("./controllers/UserController");
 
 const SessionController = require("./controllers/SessionController");
+const QuoteController = require("./controllers/QuoteController");
 
 const authMinddleWare = require("./middlewares/auth");
 
-const routes = Router();
+const authorization = require("./middlewares/authorization");
 
-//const CommerceController = require("./controllers/CommerceController");
+const CommerceController = require("./controllers/CommerceController");
+
+const routes = Router();
 
 routes.post("/session", SessionController.store);
 
@@ -20,18 +23,24 @@ routes.use(authMinddleWare);
 
 routes.get("/user", UserController.list);
 
-//routes.post("/commerce", CommerceController.store);
+routes.post("/commerce", CommerceController.store);
 
-//routes.get("/commerce", CommerceController.list);
+routes.get("/commerce", CommerceController.list);
 
-//routes.get("/commerce/:name", CommerceController.index);
+routes.post("/quote", QuoteController.store);
+routes.get("/quote/:id", QuoteController.index);
+routes.get("/quote", QuoteController.list);
+routes.get("/quote/:id", QuoteController.update);
+routes.get("/quote/:id", QuoteController.destroy);
+
+routes.get("/commerce/:name", CommerceController.index);
 
 routes.put("/user/:id", UserController.update);
 
-//routes.put("/commerce/:id", CommerceController.update);
+routes.put("/commerce/:id", CommerceController.update);
 
 routes.delete("/user/:id", UserController.destroy);
 
-//routes.delete("/commerce/:id", commerceController.destroy);
+routes.delete("/commerce/:id", CommerceController.destroy);
 
 module.exports = routes;

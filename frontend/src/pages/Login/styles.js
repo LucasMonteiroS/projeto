@@ -1,4 +1,5 @@
-import styled from "styled-components";
+  import styled from "styled-components";
+   
 import imgFundo from "../../assets/fundo.jpg";
 export const Container = styled.div`
   height: 100%;

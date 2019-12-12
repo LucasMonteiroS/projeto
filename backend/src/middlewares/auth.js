@@ -6,7 +6,7 @@ const authConfig = require('../config/auth');
 
 module.exports = async (req, res, next) => {
   const authHeader = req.headers.authorization;
-  console.log(req.headers);
+
   if (!authHeader) {
     return res.status(401).json({ error: "Validação expirou." })
   }

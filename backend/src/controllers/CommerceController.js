@@ -1,16 +1,19 @@
 const Commerces = require("../models/Commerce")
+const User = require("../models/User");
 
 module.exports = {
   async store(req, res) {
     const commerces = await Commerces.create(req.body);
-    return res.send(commerces);
+    await User.updateOne({ _id: comercio.user }, { $push: { commerce: commerce._id } })
+    return res.json(commerces);
   },
   async list(req, res) {
     const commerces = await Commerces.find({});
     return res.json(commerces);
   },
   async index(req, res) {
-    const commerces = await Commerces.findOne({ name: req.params.name });
+    const commerceId = req.params.id;
+    const commerces = await Commerces.findOne({ _id: commerceId }).populate("user");
     return res.json(commerces);
   },
   async update(req, res) {

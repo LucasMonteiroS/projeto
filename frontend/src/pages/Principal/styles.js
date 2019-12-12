@@ -14,4 +14,16 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
   }
+  button{
+    background-color:black;
+    margin-left:95%;
+    margin-top:675px;
+    font-weight: bold;
+    border-radius: 15px;
+     width: 70px;
+     height:25px;
+     border: 0;
+    font-size: 1.2em;
+    outline: 0;
+  }
 `;

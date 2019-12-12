@@ -13,6 +13,7 @@ module.exports = {
     if (!(await user.compareHash(senha))) {
       return res.status(400).json({ error: "Senha Inválida." });
     }
-    return res.json({ user, token: Users.generateToken(user) });
+    const { _id, nome, isAdmin } = user;
+    return res.json({ user: { _id, nome, isAdmin }, token: Users.generateToken(user) });
   }
 }

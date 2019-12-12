@@ -2,29 +2,33 @@ const { Schema, model } = require("mongoose");
 
 const CommerceSchema = new Schema(
   {
-    name: {
+    nome: {
       type: String,
       required: true
     },
-    street_name: {
+    nomerua: {
       type: String,
       required: true
     },
-    street_number: {
+    numerorua: {
       type: Number,
       required: true
     },
-    neighborhood: {
+    bairro: {
       type: String,
       required: true
     },
-    city: {
+    cidade: {
       type: String,
       required: true
     },
-    state: {
+    estado: {
       type: String,
       required: true
+    },
+    user_id: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
     }
   },
   {
@@ -33,3 +37,5 @@ const CommerceSchema = new Schema(
 );
 
 module.exports = model("Commerce", CommerceSchema)
+//Type: Schema.Types.ObjectId,
+//ref: "User"

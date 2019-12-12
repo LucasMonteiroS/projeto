@@ -13,7 +13,7 @@ export default function Esquece() {
           <label>Digite seu E-mail:</label>
           <input type="text" placeholder="Ex. Lucas.Silva@novaandradina.org" />
           <button type="submit">Enviar</button>
-          <button><Link className="link" to="/">Voltar para a Autenticação</Link></button>
+          <button><Link className="link" to="/login">Voltar para a Autenticação</Link></button>
         </form>
       </div>
     </Container>
