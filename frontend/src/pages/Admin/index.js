@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "./styles";
 import cadcot from "../../assets/cadcot.svg";
+import cadcom from "../../assets/cadcom.svg";
 import relat from "../../assets/relat.svg";
 export default function Administrador() {
   return (
@@ -10,16 +11,22 @@ export default function Administrador() {
         <h1>Gerenciar Dados</h1>
       </header>
       <section>
-        <Link className="lugar" to="../Cotacao">
+        <Link className="lugar" to="../comercio">
           <div className="a">
-            <img src={cadcot} className="icon" />
-            <h1>Cadastrar Serviço</h1>
+            <img src={cadcom} className="icon" />
+            <h1>Cadastrar Comércio</h1>
           </div>
         </Link>
-        <Link className="lugar" to="../Relatorio">
+        <Link className="lugar" to="../cotacao">
+          <div className="a">
+            <img src={cadcot} className="icon" />
+            <h1>Cadastrar Cotação</h1>
+          </div>
+        </Link>
+        <Link className="lugar" to="../relatorio">
           <div className="a">
             <img src={relat} className="icon" />
-            <h1>Exibir Relatórios</h1>
+            <h1>Exibir Relatório</h1>
           </div>
         </Link>
       </section>

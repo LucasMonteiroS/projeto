@@ -7,33 +7,21 @@ import { Container } from "./styles";
 import api from "../../services/api";
 
 export default function Cadastro({ history }) {
-  const [user, setUser] = useState({
-    nome: '',
-    email: '',
-    senha: '',
-    isAdmin: false,
-  });
-  function handleInputChange(e) {
-    const { id, value } = e.target;
-    setUser({
-      ...user,
-      [id]: value,
-    });
-  }
-  function handleInputCheckChange(e) {
-    const { id } = e.target;
-    setUser({
-      ...user,
-      [id]: !user.isAdmin,
-    });
-  }
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
   async function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
     try {
-      await api.post("/user", user);
+      await api.post("/user", {
+        nome,
+        email,
+        senha,
+
+      })
       history.push("/login");
     } catch (erro) {
-      console.log("Erro no cadastro do usuário", erro);
+      alert("Erro ao cadastrar usuário")
     }
   }
   return (
@@ -44,13 +32,11 @@ export default function Cadastro({ history }) {
       <div>
         <form onSubmit={handleSubmit}>
           <label>Nome de Usuário:</label>
-          <input id="nome" type="text" placeholder="LucasMs" value={user.nome} onChange={handleInputChange} required />
+          <input id="nome" type="text" placeholder="LucasMs" onChange={event => setNome(event.target.value)} value={nome} required />
           <label>E-mail:</label>
-          <input id="email" type="email" placeholder="Ex. Lucas.Silva@novaandradina.org" value={user.email} onChange={handleInputChange} required />
+          <input id="email" type="email" placeholder="Ex. Lucas.Silva@novaandradina.org" onChange={event => setEmail(event.target.value)} value={email} required />
           <label>Senha:</label>
-          <input id="senha" type="password" placeholder="Ex. 123456789" value={user.senha} onChange={handleInputChange} required />
-          <label htmlFor="isAdmin">Administrador</label>
-          <input id="isAdmin" type="checkbox" onChange={handleInputCheckChange} />
+          <input id="senha" type="password" placeholder="Ex. 123456789" onChange={event => setSenha(event.target.value)} value={senha} required />
           <button type="submit">Cadastrar</button>
           <button><Link className="link" to="/login">Voltar para a Autenticação</Link></button>
         </form>

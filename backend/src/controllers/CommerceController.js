@@ -1,28 +1,27 @@
 const Commerces = require("../models/Commerce")
-const User = require("../models/User");
-
 module.exports = {
   async store(req, res) {
-    const commerces = await Commerces.create(req.body);
-    await User.updateOne({ _id: comercio.user }, { $push: { commerce: commerce._id } })
-    return res.json(commerces);
+      const comercio = await Commerces.create(req.body);
+      return res.json(comercio);
   },
   async list(req, res) {
-    const commerces = await Commerces.find({});
-    return res.json(commerces);
+      const comercio = await Commerces.find({}).populate('Commerce');
+      return res.json(comercio);
   },
   async index(req, res) {
-    const commerceId = req.params.id;
-    const commerces = await Commerces.findOne({ _id: commerceId }).populate("user");
-    return res.json(commerces);
+      const comercio= await Commerces.findOne({ numero_rua: req.params.numero_rua });
+
+      if (!comercio) {
+          return res.status(400).json({ error: "Comércio não encontrado!" });
+      }
+      return res.json(comercio);
   },
   async update(req, res) {
-    const commerces = await Commerces.findByIdAndUpdate(req.params.id, req.body, { new: true }
-    );
-    return res.json(commerces);
+      const comercio = await Commerces.findByIdAndUpdate(req.params.id, req.body, { new: true });
+      return res.json(comercio);
   },
   async destroy(req, res) {
-    await Commerces.deleteOne({ _id: req.params.id });
-    return res.json({ message: "Exclusão realizada com sucesso!" });
+      await Comercio.deleteOne({ _id: req.params.id });
+      return res.json({ message: "Excluido com Sucesso!!" });
   }
-}
+};

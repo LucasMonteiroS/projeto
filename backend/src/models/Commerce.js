@@ -6,11 +6,11 @@ const CommerceSchema = new Schema(
       type: String,
       required: true
     },
-    nomerua: {
+    nome_rua: {
       type: String,
       required: true
     },
-    numerorua: {
+    numero_rua: {
       type: Number,
       required: true
     },
@@ -25,10 +25,6 @@ const CommerceSchema = new Schema(
     estado: {
       type: String,
       required: true
-    },
-    user_id: {
-      type: Schema.Types.ObjectId,
-      ref: "User"
     }
   },
   {

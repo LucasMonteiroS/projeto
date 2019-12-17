@@ -31,7 +31,7 @@ export const Container = styled.div`
   margin:10px;
   text-shadow: 2px 2px 4px #666; 
   color: #fff;
-  background-color: rgba(80,80, 80, 0.8);
+  background-color: rgb(80,80, 80, 57%);
   border-radius:8px;
   
   }

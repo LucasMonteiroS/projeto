@@ -26,7 +26,7 @@ const MonthlyQuoteSchema = new Schema(
             require: true
           }, _id: false
         }],
-      precol: {
+      preco: {
         type: Number,
         require: true
       }, _id: false

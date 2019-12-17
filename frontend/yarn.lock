@@ -3421,6 +3421,13 @@ decode-uri-component@^0.2.0:
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
 
+decode@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/decode/-/decode-0.3.0.tgz#e00e12d3fab2d59b1f160d71e751474bcb1964bf"
+  integrity sha1-4A4S0/qy1ZsfFg1x51FHS8sZZL8=
+  dependencies:
+    kung-fu "^0.2.0"
+
 deep-equal@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
@@ -6312,6 +6319,11 @@ kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
+
+kung-fu@^0.2.0:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/kung-fu/-/kung-fu-0.2.1.tgz#1c664928b09564e93b9a13e6b3d720070fa2b449"
+  integrity sha1-HGZJKLCVZOk7mhPms9cgBw+itEk=
 
 last-call-webpack-plugin@^3.0.0:
   version "3.0.0"

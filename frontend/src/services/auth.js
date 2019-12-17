@@ -1,6 +1,6 @@
 import decode from 'jwt-decode';
 
-export const TOKEN_KEY = '@CESTA:token';
+export const TOKEN_KEY = '@CESTA/token';
 export const USER = '@CESTA:user';
 
 export const isAuthenticated = () => localStorage.getItem(TOKEN_KEY) !== null;
@@ -14,10 +14,7 @@ export const login = (token, user) => {
 
 export const logout = () => {
     localStorage.removeItem(TOKEN_KEY);
-    localStorage.removeItem(USER);
 };
-
-export const userLocal = () => JSON.parse(localStorage.getItem(USER));
 
 export const isTokenExpired = () => {
     try {
