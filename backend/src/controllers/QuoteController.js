@@ -5,7 +5,6 @@ const Commerce = require("../models/Commerce");
 module.exports = {
   async store(req, res) {
     const quote = await Quote.create(req.body);
-    await User.updateOne({ _id: quote.user }, { $push: { quote: quote._id } })
     return res.json(quote);
   },
   async list(req, res) {
@@ -13,8 +12,10 @@ module.exports = {
     return res.json(quote);
   },
   async index(req, res) {
-    const quoteId = req.params.id;
-    const quote = await Quote.findOne({ _id: quoteId }).populate("user");
+    const quote = await Quote.findOne({ mes: req.params.mes });
+    if (!quote) {
+      return res.status(400).json({ error: "Comércio não encontrado!" });
+  }
     return res.json(quote);
   },
   async update(req, res) {

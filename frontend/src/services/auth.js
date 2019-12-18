@@ -29,7 +29,7 @@ export const isTokenExpired = () => {
 
         return false;
     } catch (err) {
-        console.log('Expired check failed!');
+        console.log('Falha na verificação!');
         return false;
     }
 };

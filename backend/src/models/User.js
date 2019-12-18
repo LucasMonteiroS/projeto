@@ -21,18 +21,7 @@ const UserSchema = new Schema(
     senha: {
       type: String,
       required: true
-    },
-    commerce: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Commerce"
-      }],
-    quote: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "MonthlyQuote"
-      }
-    ]
+    }
   },
   {
     timestamps: true

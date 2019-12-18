@@ -24,7 +24,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 45%; height: 250px;
+  width: 32.2%; height: 250px;
   font-size: 14px; 
   text-decoration: none; 
   text-align: center;
@@ -33,6 +33,8 @@ export const Container = styled.div`
   color: #fff;
   background-color: rgb(80,80, 80, 57%);
   border-radius:8px;
-  
+  }
+  section{
+    margin-top:2%;
   }
 `;

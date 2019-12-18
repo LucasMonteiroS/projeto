@@ -3,16 +3,7 @@ const MonthlyQuoteSchema = new Schema(
   {
     mes: {
       type: String,
-      required: true,
-      enum: { values: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'] }
-    },
-    commerce: {
-      type: Schema.Types.ObjectId,
-      ref: "Commerce"
-    },
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: "User"
+      required: true
     },
     cesta: {
       produto:
@@ -24,25 +15,16 @@ const MonthlyQuoteSchema = new Schema(
           precoitem: {
             type: Number,
             require: true
-          }, _id: false
+          }
         }],
       preco: {
         type: Number,
         require: true
-      }, _id: false
+      }
     },
   },
   {
     timestamps: true
   }
 );
-MonthlyQuoteSchema.pre('save', function (next) {
-  console.log(this.cesta.produto[0].precoitem);
-
-  this.cesta.produto.forEach(element => {
-    this.cesta.preco += element.precoitem
-  });
-
-  next();
-})
 module.exports = model("MonthlyQuote", MonthlyQuoteSchema)
