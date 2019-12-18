@@ -19,9 +19,9 @@ export const logout = () => {
 export const isTokenExpired = () => {
     try {
         const decoded = decode(getToken());
-        console.log(decoded);
+        //console.log(decoded);
         const date = new Date() / 1000;
-        console.log(date);
+        //console.log(date);
 
         if (decoded.exp < date) {
             return true;

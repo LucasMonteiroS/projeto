@@ -14,17 +14,20 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
   }
-    .icon{
+  .icon{
     height:100px;
     width:100px;
-    margin-top:35px;
+    margin-top:45%;
   }
-   .lugar{
+  .acess{
   display: inline-block;
   justify-content: center;
-  align-items: center;
+  align-content:center;
+  align-items:center;
+  text-align:center;
   flex-direction: column;
-  width: 32.2%; height: 250px;
+  width: 30%;
+  height: 80%;
   font-size: 14px; 
   text-decoration: none; 
   text-align: center;
@@ -35,6 +38,31 @@ export const Container = styled.div`
   border-radius:8px;
   }
   section{
+    width:100%;
+    height:100%;
     margin-top:2%;
+    align-content:center;
+    align-items:center;
+    text-align:center;
   }
+  .a{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .acess{
+  width: 80%;
+  height: 20%;
+    }
+    .icon{
+    height:100px;
+    width:100px;
+    margin-top:5%;
+  }
+  
+  }
+
 `;

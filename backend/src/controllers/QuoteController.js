@@ -8,11 +8,11 @@ module.exports = {
     return res.json(quote);
   },
   async list(req, res) {
-    const quote = await Quote.find({});
+    const quote = await Quote.find({}).populate("user comercio");
     return res.json(quote);
   },
   async index(req, res) {
-    const quote = await Quote.findOne({ mes: req.params.mes });
+    const quote = await Quote.findOne({ mes: req.params.mes })
     if (!quote) {
       return res.status(400).json({ error: "Comércio não encontrado!" });
   }
@@ -23,8 +23,9 @@ module.exports = {
     );
     return res.json(quote);
   },
+
   async destroy(req, res) {
     await Quote.deleteOne({ _id: req.params.id });
-    return res.json({ message: "Exclusão realizada com sucesso!" });
+    return res.json(await Quote.find({}).populate("user comercio"));
   }
 }

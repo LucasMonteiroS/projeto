@@ -23,6 +23,9 @@ export default function Login({ history }) {
         localStorage.setItem("@CESTA/token", token, userData);
       }
 
+        localStorage.setItem("@CESTA/user", JSON.stringify(response.data.user));
+
+
       history.push("/administrador");
     } catch (erro) {
       alert("Email ou senha inválidos");

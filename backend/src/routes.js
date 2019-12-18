@@ -22,7 +22,7 @@ routes.post("/quote", QuoteController.store);
 routes.get("/quote/:id", QuoteController.index);
 routes.get("/quote", QuoteController.list);
 routes.get("/quote/:id", QuoteController.update);
-routes.get("/quote/:id", QuoteController.destroy);
+routes.delete("/quote/:id", QuoteController.destroy);
 routes.get("/commerce/:name", CommerceController.index);
 routes.put("/user/:id", UserController.update);
 routes.put("/commerce/:id", CommerceController.update);

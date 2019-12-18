@@ -1,28 +1,25 @@
 const { Schema, model } = require("mongoose");
 const MonthlyQuoteSchema = new Schema(
   {
+    user: {type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true},
+    comercio: {type: Schema.Types.ObjectId,
+      ref: 'Commerce',
+      required: true},
     mes: {
       type: String,
       required: true
     },
     cesta: {
-      produto:
-        [{
-          nomeitem: {
-            type: String,
-            require: true
-          },
-          precoitem: {
-            type: Number,
-            require: true
-          }
-        }],
+      type: String,
+      required:true 
+        },
       preco: {
         type: Number,
-        require: true
+        required: true
       }
     },
-  },
   {
     timestamps: true
   }
